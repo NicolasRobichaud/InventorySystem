@@ -1,0 +1,43 @@
+{
+  "locked": false,
+  "version": -9998,
+  "projectFileDependencyGroups": {
+    "": [
+      "RavenDB.Client >= 3.0.3690"
+    ],
+    "DNX,Version=v4.5.1": []
+  },
+  "libraries": {
+    "RavenDB.Client/3.0.3690": {
+      "serviceable": false,
+      "sha": "9sz+E++Awpi693n9ywPjW+K2mKV7MDXR8Qoi4fLGi1SZXUIiulxE+GWBzg0F52ZAvYVzRarn0fi5jNFKC7yi7g==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "System.ComponentModel.Composition"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/Raven.Abstractions.dll",
+            "lib/net45/Raven.Client.Lightweight.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Raven.Abstractions.dll",
+            "lib/net45/Raven.Client.Lightweight.dll"
+          ]
+        }
+      },
+      "files": [
+        "RavenDB.Client.3.0.3690.nupkg",
+        "RavenDB.Client.3.0.3690.nupkg.sha512",
+        "RavenDB.Client.nuspec",
+        "lib/net45/Raven.Abstractions.dll",
+        "lib/net45/Raven.Abstractions.pdb",
+        "lib/net45/Raven.Abstractions.xml",
+        "lib/net45/Raven.Client.Lightweight.dll",
+        "lib/net45/Raven.Client.Lightweight.pdb",
+        "lib/net45/Raven.Client.Lightweight.XML"
+      ]
+    }
+  }
+}
