@@ -1,93 +1,110 @@
 ﻿@model InventorySystem.Web.ViewModel.AddBuildingFormViewModel
 
-<h1>Add a new building</h1>
+<div class="column small-11 small-centered">
+    <h1>Add a new building</h1>
 
-<form asp-anti-forgery="true" asp-action="AddBuildingFormAsync" asp-controller="Building">
-    <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
 
-    <input type="hidden" asp-for="Id" />
+    <form asp-anti-forgery="true" asp-action="AddBuildingFormAsync" asp-controller="Building">
+        <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
 
-    <hr />
-    <h4 class="subheader">General informations</h4>
-    <div class="row">
-        <div class="medium-4 columns">
-            <label asp-for="Name">Name</label>
-            <input type="text" asp-for="Name" />
+        <input type="hidden" asp-for="Id" />
+
+        <hr />
+        <h4 class="subheader">General informations</h4>
+        <div class="row">
+            <div class="medium-4 column">
+                <label asp-for="ItemId">Item Id</label>
+                <input type="text" asp-for="ItemId" />
+            </div>
+
+            <div class="medium-4 column end">
+                <label asp-for="Name">Name</label>
+                <input type="text" asp-for="Name" />
+            </div>
         </div>
 
-        <div class="medium-4 columns end">
-            <label asp-for="SerieId">Serie</label>
-            <select asp-for="SerieId">
-                <option value="@Guid.NewGuid()">Christmas in the city</option>
-            </select>
-        </div>
-    </div>
+        <div class="row">
+            <div class="medium-4 column">
+                <label asp-for="CompanyId">Company</label>
+                <select asp-for="CompanyId">
+                    <option value="@Guid.NewGuid()">Department 56</option>
+                </select>
+            </div>
 
-    <div class="row">
-        <div class="columns">
-            <label asp-for="Description">Description</label>
-            <textarea asp-for="Description"></textarea>
-        </div>
-    </div>
-
-    <hr />
-    <h4 class="subheader">Dates</h4>
-    <div class="row">
-        <div class="medium-4 columns">
-            <label asp-for="Introduced">Introduced</label>
-            <input type="text" class="datepicker" asp-for="Introduced" />
+            <div class="medium-4 column end">
+                <label asp-for="SerieId">Serie</label>
+                <select asp-for="SerieId">
+                    <option value="@Guid.NewGuid()">Christmas in the city</option>
+                </select>
+            </div>
         </div>
 
-        <div class="medium-4 columns end">
-            <label asp-for="Retired">Retired</label>
-            <input type="text" class="datepicker" asp-for="Retired" />
-        </div>
-    </div>
-
-    <hr />
-    <h4 class="subheader">Price</h4>
-    <div class="row">
-        <div class="medium-4 columns">
-            <label asp-for="PaidPrice">Paid</label>
-            <input type="text" asp-for="PaidPrice" />
+        <div class="row">
+            <div class="column">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description"></textarea>
+            </div>
         </div>
 
-        <div class="medium-4 columns">
-            <label asp-for="CdnPrice">CDN</label>
-            <input type="text" asp-for="CdnPrice" />
+        <hr />
+        <h4 class="subheader">Dates</h4>
+        <div class="row">
+            <div class="medium-4 column">
+                <label asp-for="Introduced">Introduced</label>
+                <input type="text" class="datepicker" asp-for="Introduced" />
+            </div>
+
+            <div class="medium-4 column end">
+                <label asp-for="Retired">Retired</label>
+                <input type="text" class="datepicker" asp-for="Retired" />
+            </div>
         </div>
 
-        <div class="medium-4 columns">
-            <label asp-for="UsPrice">USD</label>
-            <input type="text" asp-for="UsPrice" />
+        <hr />
+        <h4 class="subheader">Price</h4>
+        <div class="row">
+            <div class="medium-4 column">
+                <label asp-for="PaidPrice">Paid</label>
+                <input type="text" asp-for="PaidPrice" />
+            </div>
+
+            <div class="medium-4 column">
+                <label asp-for="CdnPrice">CDN</label>
+                <input type="text" asp-for="CdnPrice" />
+            </div>
+
+            <div class="medium-4 column">
+                <label asp-for="UsPrice">USD</label>
+                <input type="text" asp-for="UsPrice" />
+            </div>
         </div>
-    </div>
 
-    <hr />
-    <h4 class="subheader">Specifications</h4>
-    <div class="row">
-        <div class="columns">
-            <label asp-for="IncludedParts">Included parts</label>
-            <textarea asp-for="IncludedParts"></textarea>
+        <hr />
+        <h4 class="subheader">Specifications</h4>
+        <div class="row">
+            <div class="column">
+                <label asp-for="IncludedParts">Included parts</label>
+                <textarea asp-for="IncludedParts"></textarea>
+            </div>
         </div>
-    </div>
 
-    <hr />
-    <h4 class="subheader">Visual</h4>
-    <div class="column">
-        <label asp-for="ImageUrl">Photo</label>
-        <input type="file" asp-for="ImageUrl" />
-    </div>
+        <hr />
+        <h4 class="subheader">Visual</h4>
+        <div class="column">
+            <label asp-for="ImageUrl">Photo</label>
+            <input type="file" asp-for="ImageUrl" />
+        </div>
 
-    <hr />
-    <h4 class="subheader">Connections</h4>
-    <div class="column">
-        <label>
-            Connections ?
-        </label>
-    </div>
+        <hr />
+        <h4 class="subheader">Connections</h4>
+        <div class="column">
+            <label>
+                Connections ?
+            </label>
+        </div>
 
-    <div class="clearfix">
-        <input type="submit" class="button right" value="Save" />
-    </div>
-</form>
+        <div class="clearfix">
+            <input type="submit" class="button right" value="Save" />
+        </div>
+    </form>
+</div>

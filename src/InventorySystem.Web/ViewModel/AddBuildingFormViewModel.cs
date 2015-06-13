@@ -8,8 +8,12 @@ namespace InventorySystem.Web.ViewModel
     {
         public Guid Id { get; set; }
 
+        [Required(ErrorMessage = "L'identifiant de l'item est requis")]
+        public string ItemId { get; set; }
+
         [Required(ErrorMessage = "Le nom est requis")]
         public string Name { get; set; }
+        public Guid? CompanyId { get; set; }
         public Guid? SerieId { get; set; }
         public string Description { get; set; }
         public double? UsPrice { get; set; }

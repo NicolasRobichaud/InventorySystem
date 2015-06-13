@@ -8,7 +8,7 @@ namespace InventorySystem.Web.App_Start
     {
         public static void ConfigureDependencyInjection(IServiceCollection services)
         {
-            services.AddSingleton<DocumentStoreManager>();
+            services.AddSingleton<IDocumentStoreManager, DocumentStoreManager>();
             services.AddScoped<BaseRepository>();
         }
     }

@@ -10,6 +10,7 @@ using InventorySystem.Data.Entity;
 namespace InventorySystem.Web.Controllers
 {
     [Route("building")]
+    [Route("")]
     public class BuildingController : Controller
     {
         private readonly BaseRepository _baseRepository;
@@ -21,6 +22,7 @@ namespace InventorySystem.Web.Controllers
 
         [HttpGet]
         [Route("add")]
+        [Route("")]
         public async Task<IActionResult> AddBuildingFormAsync()
         {
             return View();
@@ -30,7 +32,7 @@ namespace InventorySystem.Web.Controllers
         [Route("add")]
         public async Task<IActionResult> AddBuildingFormAsync(AddBuildingFormViewModel viewModel)
         {
-            await _baseRepository.AddNewItemAsync(new BuildingEntity
+            await _baseRepository.CreateAsync(new BuildingEntity
             {
                 Name = viewModel.Name
             });
