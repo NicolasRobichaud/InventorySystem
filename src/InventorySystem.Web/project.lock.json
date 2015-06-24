@@ -15,7 +15,10 @@
       "Microsoft.Framework.Logging >= 1.0.0-beta4",
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta4",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta4",
-      "InventorySystem.Data >= 1.0.0-*"
+      "InventorySystem.Data >= 1.0.0-*",
+      "SimpleInjector >= 3.0.0-alpha2",
+      "SimpleInjector.Integration.Web >= 3.0.0-alpha2",
+      "SimpleInjector.Integration.WebApi >= 3.0.0-alpha2"
     ],
     "DNX,Version=v4.5.1": []
   },
@@ -1514,6 +1517,58 @@
         "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.xml"
       ]
     },
+    "Microsoft.AspNet.WebApi.Client/4.0.20710.0": {
+      "serviceable": false,
+      "sha": "BwFtW0cGr8tg02XalvF8MmznOpYrhquD2eXWI0oF3LLSqLMFoFkb8Pmke/7SnqkiNc+YfsaUqdXEKbjhv1Ctrw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Net.Http": "[2.0.20710.0, 2.1)",
+            "Newtonsoft.Json": "4.5.6"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/System.Net.Http.Formatting.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/System.Net.Http.Formatting.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.AspNet.WebApi.Client.4.0.20710.0.nupkg",
+        "Microsoft.AspNet.WebApi.Client.4.0.20710.0.nupkg.sha512",
+        "Microsoft.AspNet.WebApi.Client.nuspec",
+        "lib/net40/System.Net.Http.Formatting.dll",
+        "lib/net40/System.Net.Http.Formatting.xml"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Core/4.0.20710.0": {
+      "serviceable": false,
+      "sha": "ufD+tH4W7+eNsb4pzX5oFTDcgI6J3lffughFTkyLHPBZ+A4Eo+VncAxt3lbt9zxxbLHXIbgJHYRLvtgR5YEZAQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": "[4.0.20710.0, 4.1)"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/System.Web.Http.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/System.Web.Http.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.AspNet.WebApi.Core.4.0.20710.0.nupkg",
+        "Microsoft.AspNet.WebApi.Core.4.0.20710.0.nupkg.sha512",
+        "Microsoft.AspNet.WebApi.Core.nuspec",
+        "content/web.config.transform",
+        "lib/net40/System.Web.Http.dll",
+        "lib/net40/System.Web.Http.xml"
+      ]
+    },
     "Microsoft.AspNet.WebUtilities/1.0.0-beta4": {
       "serviceable": true,
       "sha": "EZJruvBXvVN78gAuL1Ei8HSgBfS9HvU/CiE4MjicXwdzHwyv+HZAvReDmGeWa+UaIW8kmmM4LzNAE8uEBjeQXA==",
@@ -2582,6 +2637,31 @@
         "lib/net45/Microsoft.Framework.WebEncoders.Core.xml"
       ]
     },
+    "Microsoft.Net.Http/2.0.20710.0": {
+      "serviceable": false,
+      "sha": "OsB/5QO9tYJRLYIgBOhRl4Tssh3pw7+UAO9tMGMBg63f98GfjsniVIwLWRC0vcRr/F6HLP/NvRlHyGBhtD7Bmw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "System.Net.Http",
+            "System.Net.Http.WebRequest"
+          ],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.Net.Http.2.0.20710.0.nupkg",
+        "Microsoft.Net.Http.2.0.20710.0.nupkg.sha512",
+        "Microsoft.Net.Http.nuspec",
+        "lib/net40/System.Net.Http.dll",
+        "lib/net40/System.Net.Http.WebRequest.dll",
+        "lib/net40/System.Net.Http.WebRequest.xml",
+        "lib/net40/System.Net.Http.xml",
+        "lib/net45/_._"
+      ]
+    },
     "Microsoft.Net.Http.Headers/1.0.0-beta4": {
       "serviceable": true,
       "sha": "dhN5q9MbljcAqWTv1GIpeAzB8HB7l9YTrN+zl/KXUj8OP4cTd2LZ7qeZ0tqDHkxOD+GyZwi/SnbqztKSjTnVOg==",
@@ -2832,6 +2912,113 @@
         "Remotion.Linq.nuspec",
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll",
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.xml"
+      ]
+    },
+    "SimpleInjector/3.0.0-alpha2": {
+      "serviceable": false,
+      "sha": "WGf/wSqDm0XC5ptAn3ZzFXpJJhSItLN/fV9UtxY6Zz6QQoqzJdEv12/8MUVCmLpl+ohWHJ8rpAzFP/WivI0gkw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/SimpleInjector.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/SimpleInjector.dll"
+          ]
+        }
+      },
+      "files": [
+        "SimpleInjector.3.0.0-alpha2.nupkg",
+        "SimpleInjector.3.0.0-alpha2.nupkg.sha512",
+        "SimpleInjector.nuspec",
+        "lib/net40-client/SimpleInjector.dll",
+        "lib/net40-client/SimpleInjector.xml",
+        "lib/net45/SimpleInjector.dll",
+        "lib/net45/SimpleInjector.xml",
+        "lib/portable-net4+sl4+wp8+win8+wpa81/SimpleInjector.dll",
+        "lib/portable-net4+sl4+wp8+win8+wpa81/SimpleInjector.xml"
+      ]
+    },
+    "SimpleInjector.Extensions.ExecutionContextScoping/3.0.0-alpha2": {
+      "serviceable": false,
+      "sha": "z8XjM5S8apCVm28OjCp8dO9aqAoolKVkS/BatgOjsm3liMGZ8oSGtWxlJzON9f/hhAULZEoKBMC5gReluztrzA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "SimpleInjector": "3.0.0-alpha2"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.dll"
+          ]
+        }
+      },
+      "files": [
+        "SimpleInjector.Extensions.ExecutionContextScoping.3.0.0-alpha2.nupkg",
+        "SimpleInjector.Extensions.ExecutionContextScoping.3.0.0-alpha2.nupkg.sha512",
+        "SimpleInjector.Extensions.ExecutionContextScoping.nuspec",
+        "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.dll",
+        "lib/net45/SimpleInjector.Extensions.ExecutionContextScoping.xml"
+      ]
+    },
+    "SimpleInjector.Integration.Web/3.0.0-alpha2": {
+      "serviceable": false,
+      "sha": "GyNTFzA+2O9mDffHJgBPNjMcfgEKpuigYgHYOlD799+etyjO8hPzbfihws2tTpdEXHDThwFIEXd6QWbKkK8kvw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "SimpleInjector": "3.0.0-alpha2"
+          },
+          "frameworkAssemblies": [
+            "Microsoft.Web.Infrastructure"
+          ],
+          "runtimeAssemblies": [
+            "lib/net40/SimpleInjector.Integration.Web.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/SimpleInjector.Integration.Web.dll"
+          ]
+        }
+      },
+      "files": [
+        "SimpleInjector.Integration.Web.3.0.0-alpha2.nupkg",
+        "SimpleInjector.Integration.Web.3.0.0-alpha2.nupkg.sha512",
+        "SimpleInjector.Integration.Web.nuspec",
+        "lib/net40/SimpleInjector.Integration.Web.dll",
+        "lib/net40/SimpleInjector.Integration.Web.xml"
+      ]
+    },
+    "SimpleInjector.Integration.WebApi/3.0.0-alpha2": {
+      "serviceable": false,
+      "sha": "NA9i46GbRkq0V8fEOTqqJ/20JpkLtCpb/AR/vh2UBGOwOEOSLG2TRj1ltMpLXnLiSXJ8cuFrbUkog0MiEn0osg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "SimpleInjector": "3.0.0-alpha2",
+            "SimpleInjector.Extensions.ExecutionContextScoping": "3.0.0-alpha2",
+            "Microsoft.AspNet.WebApi.Core": "4.0.20710"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/SimpleInjector.Integration.WebApi.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/SimpleInjector.Integration.WebApi.dll"
+          ]
+        }
+      },
+      "files": [
+        "SimpleInjector.Integration.WebApi.3.0.0-alpha2.nupkg",
+        "SimpleInjector.Integration.WebApi.3.0.0-alpha2.nupkg.sha512",
+        "SimpleInjector.Integration.WebApi.nuspec",
+        "lib/net45/.gitignore",
+        "lib/net45/SimpleInjector.Integration.WebApi.dll",
+        "lib/net45/SimpleInjector.Integration.WebApi.xml"
       ]
     },
     "System.Collections.Immutable/1.1.33-beta": {

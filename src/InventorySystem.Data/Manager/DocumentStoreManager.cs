@@ -4,12 +4,7 @@ using System;
 
 namespace InventorySystem.Data.Manager
 {
-    public interface IDocumentStoreManager
-    {
-        IDocumentStore Store { get; }
-    }
-
-    public class DocumentStoreManager : IDocumentStoreManager, IDisposable
+    public class DocumentStoreManager : IDisposable
     {
         private Lazy<IDocumentStore> store;
 

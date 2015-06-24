@@ -16,11 +16,14 @@
         "Microsoft.Framework.Logging": "1.0.0-beta4",
         "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta4",
-        "InventorySystem.Data": "1.0.0-*"
+        "InventorySystem.Data": "1.0.0-*",
+        "SimpleInjector": "3.0.0-alpha2",
+        "SimpleInjector.Integration.Web": "3.0.0-alpha2",
+        "SimpleInjector.Integration.WebApi": "3.0.0-alpha2"
     },
 
     "commands": {
-        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"//,
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000" //,
         //"gen": "Microsoft.Framework.CodeGeneration"
     },
 

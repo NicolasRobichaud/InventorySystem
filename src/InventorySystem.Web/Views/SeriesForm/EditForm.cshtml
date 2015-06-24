@@ -1,7 +1,7 @@
 ﻿@model InventorySystem.Web.ViewModel.Series.SeriesFormViewModel
 
 <div class="column small-11 small-centered">
-    <h1>Series</h1>
+    <h1>Série</h1>
 
     <form asp-anti-forgery="true" asp-action="SubmitAsync" asp-controller="SeriesForm">
         <div asp-validation-summary="ValidationSummary.All"></div>
@@ -11,8 +11,15 @@
         <hr />
         <div class="row">
             <div class="medium-4 column end">
-                <label asp-for="Name">Name</label>
+                <label asp-for="Name">Nom</label>
                 <input type="text" asp-for="Name" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-4 column end">
+                <label asp-for="Name">Marque</label>
+                <select asp-for="BrandId" asp-items="Model.Brands"></select>
             </div>
         </div>
 

@@ -5,6 +5,7 @@ using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using InventorySystem.Web.App_Start;
+using SimpleInjector;
 
 namespace InventorySystem.Web
 {
@@ -19,13 +20,14 @@ namespace InventorySystem.Web
         }
 
         public IConfiguration Configuration { get; set; }
+        private Container container = new Container();
 
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
 
-            DependencyInjectionConfig.ConfigureDependencyInjection(services);
+            DependencyInjectionConfig.ConfigureDependencyInjection(services, container);
 
             // Add MVC services to the services container.
             services.AddMvc();
@@ -39,6 +41,8 @@ namespace InventorySystem.Web
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
+            DependencyInjectionConfig.RegisterControllers(app, container);
+
             // Configure the HTTP request pipeline.
 
             // Add the console logger.

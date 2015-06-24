@@ -1,6 +1,6 @@
 ﻿using InventorySystem.Data.Entity;
-using InventorySystem.Data.Helper;
-using InventorySystem.Data.Manager;
+using Raven.Client;
+using Raven.Client.Linq;
 using System;
 using System.Threading.Tasks;
 
@@ -8,20 +8,17 @@ namespace InventorySystem.Data.Repositories
 {
     public class BaseRepository
     {
-        private readonly IDocumentStoreManager _database;
+        private readonly IAsyncDocumentSession _session;
 
-        public BaseRepository(IDocumentStoreManager database)
+        public BaseRepository(IAsyncDocumentSession session)
         {
-            _database = database;
+            _session = session;
         }
 
         public async Task CreateAsync<T>(T entity) where T : BaseEntity
         {
-            using (var session = _database.Store.OpenAsyncSession())
-            {
-                await session.StoreAsync(entity);
-                await session.SaveChangesAsync();
-            }
+            await _session.StoreAsync(entity);
+            await _session.SaveChangesAsync();
         }
 
         public async Task CreateOrUpdateAsync<T>(Guid? id, Action<T> update, Func<T> create) where T : BaseEntity
@@ -44,29 +41,28 @@ namespace InventorySystem.Data.Repositories
         {
             if (id.HasValue)
             {
-                using (var session = _database.Store.OpenAsyncSession())
-                {
-                    return await session.LoadAsync<T>(id);
-                }
+                return await _session.LoadAsync<T>(id);
             }
             return null;
         }
-        
+
+        public IRavenQueryable<T> Query<T>()
+        {
+            return _session.Query<T>();
+        }
+
         public async Task<bool> UpdateAsync<T>(Guid id, Action<T> update) where T : BaseEntity
         {
-            using (var session = _database.Store.OpenAsyncSession())
+            var document = await _session.LoadAsync<T>(id);
+
+            if (document != null)
             {
-                var document = await session.LoadAsync<T>(id);
-
-                if (document != null)
-                {
-                    update(document);
-                    await session.SaveChangesAsync();
-                    return true;
-                }
-
-                return false;
+                update(document);
+                await _session.SaveChangesAsync();
+                return true;
             }
+
+            return false;
         }
     }
 }
