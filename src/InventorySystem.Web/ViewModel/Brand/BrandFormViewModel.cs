@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace InventorySystem.Web.ViewModel.Company
+namespace InventorySystem.Web.ViewModel.Brand
 {
-    public class CompanyFormViewModel
+    public class BrandFormViewModel
     {
-        public Guid? Id { get; set; }
+        public string Id { get; set; }
 
         [Required(ErrorMessage = "Le nom est requis")]
         public string Name { get; set; }

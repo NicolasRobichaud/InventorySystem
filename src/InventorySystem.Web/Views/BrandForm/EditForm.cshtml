@@ -1,11 +1,10 @@
-﻿@model InventorySystem.Web.ViewModel.Company.CompanyFormViewModel
+﻿@model InventorySystem.Web.ViewModel.Brand.BrandFormViewModel
 
 <div class="column small-11 small-centered">
-    <h1>Company</h1>
+    <h1>Brand</h1>
 
-
-    <form asp-anti-forgery="true" asp-action="SubmitAsync" asp-controller="CompanyForm">
-        <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
+    <form asp-anti-forgery="true" asp-action="SubmitAsync" asp-controller="BrandForm">
+        <div asp-validation-summary="ValidationSummary.All"></div>
 
         <input type="hidden" asp-for="Id" />
 
