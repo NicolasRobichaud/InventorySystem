@@ -18,11 +18,60 @@
       "InventorySystem.Data >= 1.0.0-*",
       "SimpleInjector >= 3.0.0-alpha2",
       "SimpleInjector.Integration.Web >= 3.0.0-alpha2",
-      "SimpleInjector.Integration.WebApi >= 3.0.0-alpha2"
+      "SimpleInjector.Integration.WebApi >= 3.0.0-alpha2",
+      "AutoMapper >= 4.0.0-ci1061"
     ],
     "DNX,Version=v4.5.1": []
   },
   "libraries": {
+    "AutoMapper/4.0.0-ci1061": {
+      "serviceable": false,
+      "sha": "QxJVQKfBwTSLcLnUw8dIXw8jAuUp9bgwCCGiAElvKb/KcjNReW000cBWR8vpVjgfst6HJP07GR1IT7t7eNkTYA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/AutoMapper.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/AutoMapper.dll"
+          ]
+        }
+      },
+      "files": [
+        "AutoMapper.4.0.0-ci1061.nupkg",
+        "AutoMapper.4.0.0-ci1061.nupkg.sha512",
+        "AutoMapper.nuspec",
+        "lib/dnx46/AutoMapper.dll",
+        "lib/dnx46/AutoMapper.xml",
+        "lib/dnxcore50/AutoMapper.dll",
+        "lib/dnxcore50/AutoMapper.xml",
+        "lib/MonoAndroid/AutoMapper.dll",
+        "lib/MonoAndroid/AutoMapper.XML",
+        "lib/MonoTouch/AutoMapper.dll",
+        "lib/MonoTouch/AutoMapper.XML",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/AutoMapper.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/AutoMapper.xml",
+        "lib/sl50/AutoMapper.dll",
+        "lib/sl50/AutoMapper.xml",
+        "lib/win/AutoMapper.dll",
+        "lib/win/AutoMapper.xml",
+        "lib/wp80/AutoMapper.dll",
+        "lib/wp80/AutoMapper.xml",
+        "lib/wpa81/AutoMapper.dll",
+        "lib/wpa81/AutoMapper.xml",
+        "lib/Xamarin.iOS10/AutoMapper.dll",
+        "lib/Xamarin.iOS10/AutoMapper.XML"
+      ]
+    },
     "EntityFramework/7.0.0-beta4": {
       "serviceable": false,
       "sha": "KTplgz4PBKb33t8O0I5S8yBwkU+l9PTymzoTVav8/FGikck55Amf28EOpOZAqnkGIzCGYD5/k26P7AmVyYyTHw==",

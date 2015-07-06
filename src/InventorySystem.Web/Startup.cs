@@ -6,6 +6,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using InventorySystem.Web.App_Start;
 using SimpleInjector;
+using IConfiguration = Microsoft.Framework.ConfigurationModel.IConfiguration;
 
 namespace InventorySystem.Web
 {
@@ -31,18 +32,17 @@ namespace InventorySystem.Web
 
             // Add MVC services to the services container.
             services.AddMvc();
-            
+
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
             // services.AddWebApiConventions();
-
         }
 
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
             DependencyInjectionConfig.RegisterControllers(app, container);
-
+            
             // Configure the HTTP request pipeline.
 
             // Add the console logger.
@@ -68,6 +68,7 @@ namespace InventorySystem.Web
             RouteConfig.ConfigureRoutes(app);
 
             RavenDbConfig.InitializeIndexes();
+            AutoMapperConfig.InitializeAutoMapper();
         }
     }
 }

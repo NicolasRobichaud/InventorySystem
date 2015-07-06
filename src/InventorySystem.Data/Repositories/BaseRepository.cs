@@ -2,7 +2,10 @@
 using Raven.Client;
 using Raven.Client.Linq;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper;
 
 namespace InventorySystem.Data.Repositories
 {
@@ -21,19 +24,19 @@ namespace InventorySystem.Data.Repositories
             await _session.SaveChangesAsync();
         }
 
-        public async Task CreateOrUpdateAsync<T>(Guid? id, Action<T> update, Func<T> create) where T : BaseEntity
+        public async Task CreateOrUpdateAsync<T>(Guid? id, object model) where T : BaseEntity
         {
             if (id.HasValue)
             {
                 //Update
                 //If the id does not match any document, replace it by null to create a new document.
-                id = await UpdateAsync(id.Value, update) ? id : null;
+                id = await UpdateAsync<T>(id.Value, model) ? id : null;
             }
 
             if (!id.HasValue)
             {
                 //Create
-                await CreateAsync(create());
+                await CreateAsync(Mapper.Map<T>(model));
             }
         }
 
@@ -51,13 +54,18 @@ namespace InventorySystem.Data.Repositories
             return _session.Query<T>();
         }
 
-        public async Task<bool> UpdateAsync<T>(Guid id, Action<T> update) where T : BaseEntity
+        public async Task<IList<T>> ToListAsync<T>(Func<IRavenQueryable<T>> query)
+        {
+            return await Raven.Client.LinqExtensions.ToListAsync(query());
+        }
+
+        public async Task<bool> UpdateAsync<T>(Guid id, object model) where T : BaseEntity
         {
             var document = await _session.LoadAsync<T>(id);
 
             if (document != null)
             {
-                update(document);
+                Mapper.Map(model, document);
                 await _session.SaveChangesAsync();
                 return true;
             }

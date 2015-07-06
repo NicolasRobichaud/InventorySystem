@@ -19,7 +19,8 @@
         "InventorySystem.Data": "1.0.0-*",
         "SimpleInjector": "3.0.0-alpha2",
         "SimpleInjector.Integration.Web": "3.0.0-alpha2",
-        "SimpleInjector.Integration.WebApi": "3.0.0-alpha2"
+        "SimpleInjector.Integration.WebApi": "3.0.0-alpha2",
+        "AutoMapper": "4.0.0-ci1061"
     },
 
     "commands": {

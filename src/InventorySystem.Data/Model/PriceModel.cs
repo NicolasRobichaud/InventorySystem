@@ -1,6 +1,6 @@
-﻿namespace InventorySystem.Data.Entity
+﻿namespace InventorySystem.Data.Model
 {
-    public class PriceEntity : BaseEntity
+    public class PriceModel
     {
         public double? UsDollar { get; set; }
         public double? CanadianDollar { get; set; }

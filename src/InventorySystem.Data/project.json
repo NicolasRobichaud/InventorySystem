@@ -1,4 +1,4 @@
-﻿{
+{
     "version": "1.0.0-*",
     "description": "",
     "authors": [ "" ],
@@ -7,7 +7,8 @@
     "licenseUrl": "",
 
     "dependencies": {
-        "RavenDB.Client": "3.0.3690"
+        "RavenDB.Client": "3.0.3690",
+        "AutoMapper": "4.0.0-ci1061"
     },
 
     "frameworks": {

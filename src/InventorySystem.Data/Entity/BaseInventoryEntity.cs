@@ -1,14 +1,17 @@
-﻿using System;
+﻿using InventorySystem.Data.Model;
+using System;
 using System.Collections.Generic;
 
 namespace InventorySystem.Data.Entity
 {
     public class BaseInventoryEntity : BaseEntity
     {
+        public string ItemId { get; set; }
         public string Name { get; set; }
-        public SeriesEntity Series { get; set; }
+        public Guid? BrandId { get; set; }
+        public Guid? SeriesId { get; set; }
         public string Description { get; set; }
-        public PriceEntity Price { get; set; }
+        public PriceModel Price { get; set; }
         public DateTime? Introduced { get; set; }
         public DateTime? Retired { get; set; }
         public string ImageUrl { get; set; }

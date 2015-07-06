@@ -1,4 +1,4 @@
-﻿@model InventorySystem.Web.ViewModel.AddBuildingFormViewModel
+﻿@model InventorySystem.Web.ViewModel.Building.BuildingFormViewModel
 
 <div class="column small-11 small-centered">
     <h1>Add a new building</h1>
@@ -26,9 +26,7 @@
         <div class="row">
             <div class="medium-4 column">
                 <label asp-for="BrandId">Brand</label>
-                <select asp-for="BrandId">
-                    <option value="@Guid.NewGuid()">Department 56</option>
-                </select>
+                <select asp-for="BrandId" asp-items="Model.Brands"></select>
             </div>
 
             <div class="medium-4 column end">
@@ -39,10 +37,12 @@
             </div>
         </div>
 
+        <hr />
+
         <div class="row">
             <div class="column">
                 <label asp-for="Description">Description</label>
-                <textarea asp-for="Description"></textarea>
+                <textarea asp-for="Description" rows="4"></textarea>
             </div>
         </div>
 
@@ -64,18 +64,18 @@
         <h4 class="subheader">Price</h4>
         <div class="row">
             <div class="medium-4 column">
-                <label asp-for="PaidPrice">Paid</label>
-                <input type="text" asp-for="PaidPrice" />
+                <label asp-for="PricePaid">Paid</label>
+                <input type="text" asp-for="PricePaid" />
             </div>
 
             <div class="medium-4 column">
-                <label asp-for="CdnPrice">CDN</label>
-                <input type="text" asp-for="CdnPrice" />
+                <label asp-for="PriceCanadianDollar">CAD</label>
+                <input type="text" asp-for="PriceCanadianDollar" />
             </div>
 
             <div class="medium-4 column">
-                <label asp-for="UsPrice">USD</label>
-                <input type="text" asp-for="UsPrice" />
+                <label asp-for="PriceUsDollar">USD</label>
+                <input type="text" asp-for="PriceUsDollar" />
             </div>
         </div>
 
@@ -84,7 +84,7 @@
         <div class="row">
             <div class="column">
                 <label asp-for="IncludedParts">Included parts</label>
-                <textarea asp-for="IncludedParts"></textarea>
+                <textarea asp-for="IncludedParts" rows="4"></textarea>
             </div>
         </div>
 

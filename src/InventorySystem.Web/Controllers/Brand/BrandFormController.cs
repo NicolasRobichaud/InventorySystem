@@ -1,42 +1,34 @@
-﻿using InventorySystem.Data.Entity;
+﻿using AutoMapper;
+using InventorySystem.Data.Entity;
 using InventorySystem.Data.Helper;
 using InventorySystem.Data.Repositories;
+using InventorySystem.Web.Controllers.Base;
 using InventorySystem.Web.ViewModel.Brand;
 using Microsoft.AspNet.Mvc;
 using System.Threading.Tasks;
 
-
 namespace InventorySystem.Web.Brand.Controllers
 {
     [Route("brand")]
-    public class BrandFormController : Controller
+    public class BrandFormController : BaseController
     {
-        private const string ViewName = "EditForm";
-        private readonly BaseRepository _baseRepository;
-
-        public BrandFormController(BaseRepository baseRepository)
+        public BrandFormController(BaseRepository baseRepository) : base(baseRepository)
         {
-            _baseRepository = baseRepository;
+            
         }
 
         [HttpGet]
         [Route("edit")]
         public IActionResult Edit()
         {
-            return View(ViewName);
+            return View(EditFormViewName);
         }
 
         [HttpGet]
         [Route("edit/{id}")]
         public async Task<IActionResult> EditAsync(string id)
         {
-            var brand = await _baseRepository.LoadAsync<BrandEntity>(ParserHelper.ToGuid(id));
-
-            return View(ViewName, new BrandFormViewModel
-            {
-                Id = brand?.Id.ToString(),
-                Name = brand?.Name
-            });
+            return View(EditFormViewName, Mapper.Map<BrandFormViewModel>(await _baseRepository.LoadAsync<BrandEntity>(ParserHelper.ToGuid(id))));
         }
 
         [HttpPost]
@@ -45,21 +37,10 @@ namespace InventorySystem.Web.Brand.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _baseRepository.CreateOrUpdateAsync(ParserHelper.ToGuid(viewModel.Id),
-                    c =>
-                    {
-                        c.Name = viewModel.Name;
-                    },
-                    () =>
-                    {
-                        return new BrandEntity
-                        {
-                            Name = viewModel.Name
-                        };
-                    });
+                await _baseRepository.CreateOrUpdateAsync<BrandEntity>(ParserHelper.ToGuid(viewModel.Id), viewModel);
             }
 
-            return View(ViewName, viewModel);
+            return View(EditFormViewName, viewModel);
         }
     }
 }

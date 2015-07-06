@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNet.Mvc.Rendering;
+﻿using InventorySystem.Web.ViewModel.Base;
+using Microsoft.AspNet.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace InventorySystem.Web.ViewModel.Series
 {
-    public class SeriesFormViewModel
+    public class SeriesFormViewModel : BaseFormViewModel
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-
         [Required(ErrorMessage = "La marque est requise")]
         public Guid? BrandId { get; set; }
 
