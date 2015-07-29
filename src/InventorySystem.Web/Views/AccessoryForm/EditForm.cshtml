@@ -1,9 +1,9 @@
-﻿@model InventorySystem.Web.ViewModel.Brand.BrandFormViewModel
+﻿@model InventorySystem.Web.ViewModel.Accessory.AccessoryFormViewModel
 
 <div class="column small-11 small-centered">
-    <h1>Brand</h1>
+    <h1>Accessory</h1>
 
-    <form asp-anti-forgery="true" asp-action="SubmitAsync" asp-controller="BrandForm">
+    <form asp-anti-forgery="true" asp-action="SubmitAsync" asp-controller="AccessoryForm">
         <div asp-validation-summary="ValidationSummary.All"></div>
 
         <input type="hidden" asp-for="Id" />

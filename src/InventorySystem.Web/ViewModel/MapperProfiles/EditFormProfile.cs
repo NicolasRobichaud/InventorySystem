@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using InventorySystem.Data.Entity;
 using InventorySystem.Data.Model;
+using InventorySystem.Web.ViewModel.Accessory;
 using InventorySystem.Web.ViewModel.Brand;
 using InventorySystem.Web.ViewModel.Building;
 using InventorySystem.Web.ViewModel.Series;
+using InventorySystem.Web.ViewModel.Set;
 
 namespace InventorySystem.Web.ViewModel.MapperProfiles
 {
@@ -28,6 +30,14 @@ namespace InventorySystem.Web.ViewModel.MapperProfiles
                     .ForMember(dest => dest.Id, opt => opt.Ignore());
 
             Mapper.CreateMap<SeriesEntity, SeriesFormViewModel>()
+                .ReverseMap()
+                    .ForMember(dest => dest.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<AccessoryEntity, AccessoryFormViewModel>()
+                .ReverseMap()
+                    .ForMember(dest => dest.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<SetEntity, SetFormViewModel>()
                 .ReverseMap()
                     .ForMember(dest => dest.Id, opt => opt.Ignore());
         }
