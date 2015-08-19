@@ -29,7 +29,7 @@ namespace InventorySystem.Data.Manager
         {
             return new DocumentStore()
             {
-                Url = "http://raven.local.com",
+                Url = "http://localhost:8080",
                 DefaultDatabase = "InventorySystem"
             }.Initialize();
         }
